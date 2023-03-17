@@ -29,10 +29,7 @@ export default function App() {
 
       <div className="form-control">
         <label>Deskripsi :</label>
-        <input
-          value={deskripsi}
-          onChange={(e) => setDeskripsi(e.target.value)}
-        />
+        <textarea value={deskripsi} onChange={e => setDeskripsi(e.target.value)} cols='50' rows='7' />
       </div>
 
       <div className="form-control">
@@ -42,7 +39,10 @@ export default function App() {
 
       <div className="form-control">
         <label>Label :</label>
-        <input value={label} onChange={(e) => setLabel(e.target.value)} />
+        <select onChange={e => setLabel(e.target.value)}>
+<option value='jeruk'>Jeruk</option>
+<option value='apel'>Apel</option>
+        </select>
       </div>
 
       <div className="form-control">
@@ -97,6 +97,7 @@ export default function App() {
 
       <CSVLink
         headers={headers}
+        
         data={[
           {
             Judul: "PROMO! " + judul,
