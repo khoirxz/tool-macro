@@ -29,7 +29,12 @@ export default function App() {
 
       <div className="form-control">
         <label>Deskripsi :</label>
-        <textarea value={deskripsi} onChange={e => setDeskripsi(e.target.value)} cols='50' rows='7' />
+        <textarea
+          value={deskripsi}
+          onChange={(e) => setDeskripsi(e.target.value)}
+          cols="50"
+          rows="7"
+        />
       </div>
 
       <div className="form-control">
@@ -39,10 +44,7 @@ export default function App() {
 
       <div className="form-control">
         <label>Label :</label>
-        <select onChange={e => setLabel(e.target.value)}>
-<option value='jeruk'>Jeruk</option>
-<option value='apel'>Apel</option>
-        </select>
+        <input value={label} onChange={(e) => setLabel(e.target.value)} />
       </div>
 
       <div className="form-control">
@@ -97,7 +99,6 @@ export default function App() {
 
       <CSVLink
         headers={headers}
-        
         data={[
           {
             Judul: "PROMO! " + judul,
@@ -117,7 +118,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "DISKON! " + judul,
@@ -137,7 +138,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "NEW! " + judul,
@@ -157,7 +158,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BERGARANSI! " + judul,
@@ -177,7 +178,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERMURAH! " + judul,
@@ -196,7 +197,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERLARIS! " + judul,
@@ -215,7 +216,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERBARU! " + judul,
@@ -234,7 +235,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "ORIGINAL! " + judul,
@@ -253,7 +254,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BEST SELLER! " + judul,
@@ -272,7 +273,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BIG PROMO! " + judul,
@@ -291,7 +292,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BIG SALE! " + judul,
@@ -310,7 +311,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BISA COD! " + judul,
@@ -329,7 +330,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO COD! " + judul,
@@ -348,7 +349,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERPERCAYA! " + judul,
@@ -367,7 +368,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PRODUK ASLI! " + judul,
@@ -386,7 +387,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "CUCI GUDANG! " + judul,
@@ -405,7 +406,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "COD! " + judul,
@@ -424,7 +425,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO MENARIK! " + judul,
@@ -443,7 +444,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO GILA! " + judul,
@@ -462,7 +463,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "HARGA GROSIR! " + judul,
@@ -481,7 +482,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "HARGA TERMURAH! " + judul,
@@ -500,7 +501,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "NEW ARRIVAL! " + judul,
@@ -519,7 +520,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "DISKON MURAH! " + judul,
@@ -538,7 +539,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "MENARIK! " + judul,
@@ -557,7 +558,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERKEREN! " + judul,
@@ -576,7 +577,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERLAKU! " + judul,
@@ -595,7 +596,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "MURAH! " + judul,
@@ -614,7 +615,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERJAMIN! " + judul,
@@ -633,7 +634,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "ORIGINAL! " + judul,
@@ -652,7 +653,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "LARIS! " + judul,
@@ -671,7 +672,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TOP SELLER! " + judul,
@@ -690,7 +691,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BEST PROMO! " + judul,
@@ -709,7 +710,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PALING LARIS " + judul,
@@ -728,7 +729,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO! " + judul,
@@ -747,7 +748,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "DISKON! " + judul,
@@ -766,7 +767,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "NEW! " + judul,
@@ -785,7 +786,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BERGARANSI! " + judul,
@@ -804,7 +805,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERMURAH! " + judul,
@@ -823,7 +824,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERLARIS! " + judul,
@@ -842,7 +843,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERBARU! " + judul,
@@ -861,7 +862,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "ORIGINAL! " + judul,
@@ -880,7 +881,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BEST SELLER! " + judul,
@@ -899,7 +900,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BIG PROMO! " + judul,
@@ -918,7 +919,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BIG SALE! " + judul,
@@ -937,7 +938,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BISA COD! " + judul,
@@ -956,7 +957,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO COD! " + judul,
@@ -975,7 +976,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERPERCAYA! " + judul,
@@ -994,7 +995,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PRODUK ASLI! " + judul,
@@ -1013,7 +1014,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "CUCI GUDANG! " + judul,
@@ -1032,7 +1033,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "COD! " + judul,
@@ -1051,7 +1052,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO MENARIK! " + judul,
@@ -1070,7 +1071,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO GILA! " + judul,
@@ -1089,7 +1090,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "HARGA GROSIR! " + judul,
@@ -1108,7 +1109,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "HARGA TERMURAH! " + judul,
@@ -1127,7 +1128,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "NEW ARRIVAL! " + judul,
@@ -1146,7 +1147,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "DISKON MURAH! " + judul,
@@ -1165,7 +1166,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "MENARIK! " + judul,
@@ -1184,7 +1185,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERKEREN! " + judul,
@@ -1203,7 +1204,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERLAKU! " + judul,
@@ -1222,7 +1223,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "MURAH! " + judul,
@@ -1241,7 +1242,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERJAMIN! " + judul,
@@ -1260,7 +1261,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "ORIGINAL! " + judul,
@@ -1279,7 +1280,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "LARIS! " + judul,
@@ -1298,7 +1299,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TOP SELLER! " + judul,
@@ -1317,7 +1318,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BEST PROMO! " + judul,
@@ -1336,7 +1337,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PALING LARIS " + judul,
@@ -1355,7 +1356,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO! " + judul,
@@ -1374,7 +1375,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "DISKON! " + judul,
@@ -1393,7 +1394,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "NEW! " + judul,
@@ -1412,7 +1413,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BERGARANSI! " + judul,
@@ -1431,7 +1432,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERMURAH! " + judul,
@@ -1450,7 +1451,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERLARIS! " + judul,
@@ -1469,7 +1470,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERBARU! " + judul,
@@ -1488,7 +1489,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "ORIGINAL! " + judul,
@@ -1507,7 +1508,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BEST SELLER! " + judul,
@@ -1526,7 +1527,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BIG PROMO! " + judul,
@@ -1545,7 +1546,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BIG SALE! " + judul,
@@ -1564,7 +1565,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BISA COD! " + judul,
@@ -1583,7 +1584,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO COD! " + judul,
@@ -1602,7 +1603,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERPERCAYA! " + judul,
@@ -1621,7 +1622,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PRODUK ASLI! " + judul,
@@ -1640,7 +1641,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "CUCI GUDANG! " + judul,
@@ -1659,7 +1660,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "COD! " + judul,
@@ -1678,7 +1679,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO MENARIK! " + judul,
@@ -1697,7 +1698,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO GILA! " + judul,
@@ -1716,7 +1717,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "HARGA GROSIR! " + judul,
@@ -1735,7 +1736,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "HARGA TERMURAH! " + judul,
@@ -1754,7 +1755,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "NEW ARRIVAL! " + judul,
@@ -1773,7 +1774,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "DISKON MURAH! " + judul,
@@ -1792,7 +1793,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "MENARIK! " + judul,
@@ -1811,7 +1812,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERKEREN! " + judul,
@@ -1830,7 +1831,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERLAKU! " + judul,
@@ -1849,7 +1850,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "MURAH! " + judul,
@@ -1868,7 +1869,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TERJAMIN! " + judul,
@@ -1887,7 +1888,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "ORIGINAL! " + judul,
@@ -1906,7 +1907,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "LARIS! " + judul,
@@ -1925,7 +1926,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "TOP SELLER! " + judul,
@@ -1944,7 +1945,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "BEST PROMO! " + judul,
@@ -1963,7 +1964,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PALING LARIS " + judul,
@@ -1982,7 +1983,7 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
+            Gambar10: `${gambar10}`,
           },
           {
             Judul: "PROMO! " + judul,
@@ -2001,8 +2002,8 @@ export default function App() {
             Gambar7: `${gambar7}`,
             Gambar8: `${gambar8}`,
             Gambar9: `${gambar9}`,
-            Gambar10: `${gambar10}`
-          }
+            Gambar10: `${gambar10}`,
+          },
         ]}
       >
         Download
@@ -2028,5 +2029,5 @@ const headers = [
   { label: "Gambar7", key: "Gambar7" },
   { label: "Gambar8", key: "Gambar8" },
   { label: "Gambar9", key: "Gambar9" },
-  { label: "Gambar10", key: "Gambar10" }
+  { label: "Gambar10", key: "Gambar10" },
 ];
