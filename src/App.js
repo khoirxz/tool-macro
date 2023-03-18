@@ -4,9 +4,15 @@ import { CSVLink } from "react-csv";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/joy/Button";
+import FormControl from "@mui/material/FormControl";
+import InputLabel from "@mui/material/InputLabel";
+import Select from "@mui/material/Select";
+import MenuItem from "@mui/material/MenuItem";
 
 import Navbar from "./components/Navbar";
 import InputForm from "./components/InputForm";
+
+import { listKategory } from "./Kategori";
 
 import "./styles.css";
 
@@ -15,6 +21,7 @@ export default function App() {
   const [deskripsi, setDeskripsi] = useState("");
   const [harga, setHarga] = useState(0);
   const [label, setLabel] = useState("");
+  const [kategori, setKategori] = useState("");
   const [gambar1, setGambar1] = useState("");
   const [gambar2, setGambar2] = useState("");
   const [gambar3, setGambar3] = useState("");
@@ -56,6 +63,22 @@ export default function App() {
           setState={setHarga}
           inputType="number"
         />
+        {/* Kategori field */}
+        <FormControl size="small" sx={{ mb: 2 }} fullWidth>
+          <InputLabel id="Kategori">Kategori</InputLabel>
+          <Select
+            labelId="Kategori"
+            label="Kategori"
+            onChange={(e) => setKategori(e.target.value)}
+          >
+            <MenuItem value="semua">Pilih semua</MenuItem>
+            {listKategory.map((item, key) => (
+              <MenuItem value={item} key={key}>
+                {item}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
         {/* Label field */}
         <InputForm
           title="Label"
@@ -125,6 +148,8 @@ export default function App() {
           inputType="text"
         />
 
+        {/* end of gambar field */}
+
         <Button>
           <CSVLink
             headers={headers}
@@ -134,7 +159,7 @@ export default function App() {
                 Judul: "PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Peralatan",
+                Kategori: kategori !== "semua" ? kategori : "Peralatan",
                 Lokasi:
                   "Kota Administrasi Jakarta Selatan, Daerah Khusus Ibukota Jakarta",
                 Delay: 35000,
@@ -154,7 +179,7 @@ export default function App() {
                 Judul: "DISKON! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Mebel",
+                Kategori: kategori !== "semua" ? kategori : "Mebel",
                 Lokasi:
                   "Kota Administrasi Jakarta Pusat, Daerah Khusus Ibukota Jakarta",
                 Delay: 40000,
@@ -174,7 +199,8 @@ export default function App() {
                 Judul: "NEW! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Peralatan Rumah Tangga",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Peralatan Rumah Tangga",
                 Lokasi:
                   "Kota Administrasi Jakarta Barat, Daerah Khusus Ibukota Jakarta",
                 Delay: 29000,
@@ -194,7 +220,7 @@ export default function App() {
                 Judul: "BERGARANSI! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kebun",
+                Kategori: kategori !== "semua" ? kategori : "Kebun",
                 Lokasi:
                   "jakarta timur, Kota Administrasi Jakarta Timur, Daerah Khusus Ibukota Jakarta 13650",
                 Delay: 33000,
@@ -214,7 +240,7 @@ export default function App() {
                 Judul: "TERMURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Perkakas",
+                Kategori: kategori !== "semua" ? kategori : "Perkakas",
                 Lokasi: "Magelang",
                 Delay: 38000,
                 Label: `${label}`,
@@ -233,7 +259,7 @@ export default function App() {
                 Judul: "TERLARIS! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Video Game",
+                Kategori: kategori !== "semua" ? kategori : "Video Game",
                 Lokasi: "Pati, Jawa Tengah, Indonesia",
                 Delay: 45000,
                 Label: `${label}`,
@@ -252,7 +278,8 @@ export default function App() {
                 Judul: "TERBARU! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Buku, Film, & Musik",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Buku, Film, & Musik",
                 Lokasi: "Pekalongan",
                 Delay: 32000,
                 Label: `${label}`,
@@ -271,7 +298,7 @@ export default function App() {
                 Judul: "ORIGINAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Tas & Koper",
+                Kategori: kategori !== "semua" ? kategori : "Tas & Koper",
                 Lokasi: "Pemalang",
                 Delay: 38000,
                 Label: `${label}`,
@@ -290,7 +317,8 @@ export default function App() {
                 Judul: "BEST SELLER! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Pakaian & Sepatu Wanita",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Pakaian & Sepatu Wanita",
                 Lokasi: "Purbalingga, Jawa Tengah, Indonesia",
                 Delay: 30000,
                 Label: `${label}`,
@@ -309,7 +337,8 @@ export default function App() {
                 Judul: "BIG PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Pakaian & Sepatu Pria",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Pakaian & Sepatu Pria",
                 Lokasi: "Rembang, Jawa Tengah, Indonesia",
                 Delay: 34000,
                 Label: `${label}`,
@@ -328,7 +357,8 @@ export default function App() {
                 Judul: "BIG SALE! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Perhiasan & Aksesori",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Perhiasan & Aksesori",
                 Lokasi: "Kota Salatiga",
                 Delay: 55000,
                 Label: `${label}`,
@@ -347,7 +377,8 @@ export default function App() {
                 Judul: "BISA COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kesehatan & Kecantikan",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Kesehatan & Kecantikan",
                 Lokasi: "Semarang, Indonesia",
                 Delay: 35000,
                 Label: `${label}`,
@@ -366,7 +397,10 @@ export default function App() {
                 Judul: "PROMO COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kebutuhan Hewan Peliharaan",
+                Kategori:
+                  kategori !== "semua"
+                    ? kategori
+                    : "Kebutuhan Hewan Peliharaan",
                 Lokasi: "Sragen, Jawa Tengah, Indonesia",
                 Delay: 40000,
                 Label: `${label}`,
@@ -385,7 +419,7 @@ export default function App() {
                 Judul: "TERPERCAYA! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Bayi & Anak-Anak",
+                Kategori: kategori !== "semua" ? kategori : "Bayi & Anak-Anak",
                 Lokasi: "Sukoharjo",
                 Delay: 29000,
                 Label: `${label}`,
@@ -404,7 +438,7 @@ export default function App() {
                 Judul: "PRODUK ASLI! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Mainan & Game",
+                Kategori: kategori !== "semua" ? kategori : "Mainan & Game",
                 Lokasi: "Surakarta",
                 Delay: 33000,
                 Label: `${label}`,
@@ -423,7 +457,8 @@ export default function App() {
                 Judul: "CUCI GUDANG! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Elektronik & Komputer",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Elektronik & Komputer",
                 Lokasi: "Tegal, Jawa Tengah",
                 Delay: 38000,
                 Label: `${label}`,
@@ -442,7 +477,7 @@ export default function App() {
                 Judul: "COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Telepon Seluler",
+                Kategori: kategori !== "semua" ? kategori : "Telepon Seluler",
                 Lokasi: "Temanggung, Jawa Tengah, Indonesia",
                 Delay: 45000,
                 Label: `${label}`,
@@ -461,7 +496,7 @@ export default function App() {
                 Judul: "PROMO MENARIK! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Sepeda",
+                Kategori: kategori !== "semua" ? kategori : "Sepeda",
                 Lokasi: "Wonogiri, Jawa Tengah, Indonesia",
                 Delay: 32000,
                 Label: `${label}`,
@@ -480,7 +515,7 @@ export default function App() {
                 Judul: "PROMO GILA! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Seni & Kerajinan",
+                Kategori: kategori !== "semua" ? kategori : "Seni & Kerajinan",
                 Lokasi: "Wonosobo, Jawa Tengah, Indonesia",
                 Delay: 38000,
                 Label: `${label}`,
@@ -499,7 +534,8 @@ export default function App() {
                 Judul: "HARGA GROSIR! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Olahraga & Outdoor",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Olahraga & Outdoor",
                 Lokasi: "Bandung",
                 Delay: 30000,
                 Label: `${label}`,
@@ -518,7 +554,7 @@ export default function App() {
                 Judul: "HARGA TERMURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Komponen Otomotif",
+                Kategori: kategori !== "semua" ? kategori : "Komponen Otomotif",
                 Lokasi: "Kota Banjar",
                 Delay: 34000,
                 Label: `${label}`,
@@ -537,7 +573,7 @@ export default function App() {
                 Judul: "NEW ARRIVAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Alat Musik",
+                Kategori: kategori !== "semua" ? kategori : "Alat Musik",
                 Lokasi: "Bekasi",
                 Delay: 55000,
                 Label: `${label}`,
@@ -556,7 +592,8 @@ export default function App() {
                 Judul: "DISKON MURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Barang Antik & Koleksi",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Barang Antik & Koleksi",
                 Lokasi: "Bogor, Indonesia",
                 Delay: 35000,
                 Label: `${label}`,
@@ -575,7 +612,7 @@ export default function App() {
                 Judul: "MENARIK! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Cuci Gudang",
+                Kategori: kategori !== "semua" ? kategori : "Cuci Gudang",
                 Lokasi: "Ciamis, Jawa Barat, Indonesia",
                 Delay: 40000,
                 Label: `${label}`,
@@ -594,7 +631,7 @@ export default function App() {
                 Judul: "TERKEREN! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Lain-lain",
+                Kategori: kategori !== "semua" ? kategori : "Lain-lain",
                 Lokasi: "Kabupaten Cianjur",
                 Delay: 29000,
                 Label: `${label}`,
@@ -613,7 +650,7 @@ export default function App() {
                 Judul: "TERLAKU! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Peralatan",
+                Kategori: kategori !== "semua" ? kategori : "Peralatan",
                 Lokasi: "Kota Cimahi",
                 Delay: 33000,
                 Label: `${label}`,
@@ -632,7 +669,7 @@ export default function App() {
                 Judul: "MURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Mebel",
+                Kategori: kategori !== "semua" ? kategori : "Mebel",
                 Lokasi: "Cirebon",
                 Delay: 38000,
                 Label: `${label}`,
@@ -651,7 +688,8 @@ export default function App() {
                 Judul: "TERJAMIN! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Peralatan Rumah Tangga",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Peralatan Rumah Tangga",
                 Lokasi: "Depok",
                 Delay: 45000,
                 Label: `${label}`,
@@ -670,7 +708,7 @@ export default function App() {
                 Judul: "ORIGINAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kebun",
+                Kategori: kategori !== "semua" ? kategori : "Kebun",
                 Lokasi: "Garut",
                 Delay: 32000,
                 Label: `${label}`,
@@ -689,7 +727,7 @@ export default function App() {
                 Judul: "LARIS! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Perkakas",
+                Kategori: kategori !== "semua" ? kategori : "Perkakas",
                 Lokasi: "Indramayu",
                 Delay: 38000,
                 Label: `${label}`,
@@ -708,7 +746,7 @@ export default function App() {
                 Judul: "TOP SELLER! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Video Game",
+                Kategori: kategori !== "semua" ? kategori : "Video Game",
                 Lokasi: "Karawang",
                 Delay: 30000,
                 Label: `${label}`,
@@ -727,7 +765,8 @@ export default function App() {
                 Judul: "BEST PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Buku, Film, & Musik",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Buku, Film, & Musik",
                 Lokasi: "Kuningan, Indonesia",
                 Delay: 34000,
                 Label: `${label}`,
@@ -746,7 +785,7 @@ export default function App() {
                 Judul: "PALING LARIS " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Tas & Koper",
+                Kategori: kategori !== "semua" ? kategori : "Tas & Koper",
                 Lokasi: "Majalengka",
                 Delay: 55000,
                 Label: `${label}`,
@@ -765,7 +804,8 @@ export default function App() {
                 Judul: "PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Pakaian & Sepatu Wanita",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Pakaian & Sepatu Wanita",
                 Lokasi: "Bangkalan, Bangkalan",
                 Delay: 35000,
                 Label: `${label}`,
@@ -784,7 +824,8 @@ export default function App() {
                 Judul: "DISKON! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Pakaian & Sepatu Pria",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Pakaian & Sepatu Pria",
                 Lokasi: "Banyuwangi, Jawa Timur",
                 Delay: 40000,
                 Label: `${label}`,
@@ -803,7 +844,8 @@ export default function App() {
                 Judul: "NEW! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Perhiasan & Aksesori",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Perhiasan & Aksesori",
                 Lokasi: "Kota Batu",
                 Delay: 29000,
                 Label: `${label}`,
@@ -822,7 +864,8 @@ export default function App() {
                 Judul: "BERGARANSI! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kesehatan & Kecantikan",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Kesehatan & Kecantikan",
                 Lokasi: "Blitar",
                 Delay: 33000,
                 Label: `${label}`,
@@ -841,7 +884,10 @@ export default function App() {
                 Judul: "TERMURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kebutuhan Hewan Peliharaan",
+                Kategori:
+                  kategori !== "semua"
+                    ? kategori
+                    : "Kebutuhan Hewan Peliharaan",
                 Lokasi: "Bojonegoro",
                 Delay: 38000,
                 Label: `${label}`,
@@ -860,7 +906,7 @@ export default function App() {
                 Judul: "TERLARIS! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Bayi & Anak-Anak",
+                Kategori: kategori !== "semua" ? kategori : "Bayi & Anak-Anak",
                 Lokasi: "Kabupaten Bondowoso",
                 Delay: 45000,
                 Label: `${label}`,
@@ -879,7 +925,7 @@ export default function App() {
                 Judul: "TERBARU! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Mainan & Game",
+                Kategori: kategori !== "semua" ? kategori : "Mainan & Game",
                 Lokasi: "Gresik",
                 Delay: 32000,
                 Label: `${label}`,
@@ -898,7 +944,8 @@ export default function App() {
                 Judul: "ORIGINAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Elektronik & Komputer",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Elektronik & Komputer",
                 Lokasi: "Jember",
                 Delay: 38000,
                 Label: `${label}`,
@@ -917,7 +964,7 @@ export default function App() {
                 Judul: "BEST SELLER! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Telepon Seluler",
+                Kategori: kategori !== "semua" ? kategori : "Telepon Seluler",
                 Lokasi: "Jombang, Jawa Timur, Indonesia",
                 Delay: 30000,
                 Label: `${label}`,
@@ -936,7 +983,7 @@ export default function App() {
                 Judul: "BIG PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Sepeda",
+                Kategori: kategori !== "semua" ? kategori : "Sepeda",
                 Lokasi: "Kediri",
                 Delay: 34000,
                 Label: `${label}`,
@@ -955,7 +1002,7 @@ export default function App() {
                 Judul: "BIG SALE! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Seni & Kerajinan",
+                Kategori: kategori !== "semua" ? kategori : "Seni & Kerajinan",
                 Lokasi: "Lamongan",
                 Delay: 55000,
                 Label: `${label}`,
@@ -974,7 +1021,8 @@ export default function App() {
                 Judul: "BISA COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Olahraga & Outdoor",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Olahraga & Outdoor",
                 Lokasi: "Lumajang",
                 Delay: 35000,
                 Label: `${label}`,
@@ -993,7 +1041,7 @@ export default function App() {
                 Judul: "PROMO COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Komponen Otomotif",
+                Kategori: kategori !== "semua" ? kategori : "Komponen Otomotif",
                 Lokasi: "Madiun",
                 Delay: 40000,
                 Label: `${label}`,
@@ -1012,7 +1060,7 @@ export default function App() {
                 Judul: "TERPERCAYA! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Alat Musik",
+                Kategori: kategori !== "semua" ? kategori : "Alat Musik",
                 Lokasi: "Magetan, Jawa Tengah, Indonesia",
                 Delay: 29000,
                 Label: `${label}`,
@@ -1031,7 +1079,8 @@ export default function App() {
                 Judul: "PRODUK ASLI! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Barang Antik & Koleksi",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Barang Antik & Koleksi",
                 Lokasi: "Malang",
                 Delay: 33000,
                 Label: `${label}`,
@@ -1050,7 +1099,7 @@ export default function App() {
                 Judul: "CUCI GUDANG! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Cuci Gudang",
+                Kategori: kategori !== "semua" ? kategori : "Cuci Gudang",
                 Lokasi: "Mojokerto",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1069,7 +1118,7 @@ export default function App() {
                 Judul: "COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Lain-lain",
+                Kategori: kategori !== "semua" ? kategori : "Lain-lain",
                 Lokasi: "Nganjuk",
                 Delay: 45000,
                 Label: `${label}`,
@@ -1088,7 +1137,7 @@ export default function App() {
                 Judul: "PROMO MENARIK! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Peralatan",
+                Kategori: kategori !== "semua" ? kategori : "Peralatan",
                 Lokasi: "Ngawi, Jawa Tengah, Indonesia",
                 Delay: 32000,
                 Label: `${label}`,
@@ -1107,7 +1156,7 @@ export default function App() {
                 Judul: "PROMO GILA! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Mebel",
+                Kategori: kategori !== "semua" ? kategori : "Mebel",
                 Lokasi: "Kabupaten Pamekasan",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1126,7 +1175,8 @@ export default function App() {
                 Judul: "HARGA GROSIR! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Peralatan Rumah Tangga",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Peralatan Rumah Tangga",
                 Lokasi: "Pasuruan",
                 Delay: 30000,
                 Label: `${label}`,
@@ -1145,7 +1195,7 @@ export default function App() {
                 Judul: "HARGA TERMURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kebun",
+                Kategori: kategori !== "semua" ? kategori : "Kebun",
                 Lokasi: "Ponorogo",
                 Delay: 34000,
                 Label: `${label}`,
@@ -1164,7 +1214,7 @@ export default function App() {
                 Judul: "NEW ARRIVAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Perkakas",
+                Kategori: kategori !== "semua" ? kategori : "Perkakas",
                 Lokasi: "Probolinggo",
                 Delay: 55000,
                 Label: `${label}`,
@@ -1183,7 +1233,7 @@ export default function App() {
                 Judul: "DISKON MURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Video Game",
+                Kategori: kategori !== "semua" ? kategori : "Video Game",
                 Lokasi: "Sampang, Jawa Timur, Indonesia",
                 Delay: 35000,
                 Label: `${label}`,
@@ -1202,7 +1252,8 @@ export default function App() {
                 Judul: "MENARIK! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Buku, Film, & Musik",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Buku, Film, & Musik",
                 Lokasi: "Sidoarjo, Jawa Timur, Indonesia",
                 Delay: 40000,
                 Label: `${label}`,
@@ -1221,7 +1272,7 @@ export default function App() {
                 Judul: "TERKEREN! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Tas & Koper",
+                Kategori: kategori !== "semua" ? kategori : "Tas & Koper",
                 Lokasi: "Kabupaten Situbondo",
                 Delay: 29000,
                 Label: `${label}`,
@@ -1240,7 +1291,8 @@ export default function App() {
                 Judul: "TERLAKU! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Pakaian & Sepatu Wanita",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Pakaian & Sepatu Wanita",
                 Lokasi: "Kabupaten Sumenep",
                 Delay: 33000,
                 Label: `${label}`,
@@ -1259,7 +1311,8 @@ export default function App() {
                 Judul: "MURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Pakaian & Sepatu Pria",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Pakaian & Sepatu Pria",
                 Lokasi: "Surabaya, Indonesia",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1278,7 +1331,8 @@ export default function App() {
                 Judul: "TERJAMIN! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Perhiasan & Aksesori",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Perhiasan & Aksesori",
                 Lokasi: "Kabupaten Trenggalek",
                 Delay: 45000,
                 Label: `${label}`,
@@ -1297,7 +1351,8 @@ export default function App() {
                 Judul: "ORIGINAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kesehatan & Kecantikan",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Kesehatan & Kecantikan",
                 Lokasi: "Tuban, Jawa Timur, Indonesia",
                 Delay: 32000,
                 Label: `${label}`,
@@ -1316,7 +1371,10 @@ export default function App() {
                 Judul: "LARIS! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kebutuhan Hewan Peliharaan",
+                Kategori:
+                  kategori !== "semua"
+                    ? kategori
+                    : "Kebutuhan Hewan Peliharaan",
                 Lokasi: "Tulungagung",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1335,7 +1393,7 @@ export default function App() {
                 Judul: "TOP SELLER! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Bayi & Anak-Anak",
+                Kategori: kategori !== "semua" ? kategori : "Bayi & Anak-Anak",
                 Lokasi: "Banjarnegara, Jawa Tengah, Indonesia",
                 Delay: 30000,
                 Label: `${label}`,
@@ -1354,7 +1412,7 @@ export default function App() {
                 Judul: "BEST PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Mainan & Game",
+                Kategori: kategori !== "semua" ? kategori : "Mainan & Game",
                 Lokasi: "Banyumas, Jawa Tengah",
                 Delay: 34000,
                 Label: `${label}`,
@@ -1373,7 +1431,8 @@ export default function App() {
                 Judul: "PALING LARIS " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Elektronik & Komputer",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Elektronik & Komputer",
                 Lokasi: "Batang, Jawa Tengah, Indonesia",
                 Delay: 55000,
                 Label: `${label}`,
@@ -1392,7 +1451,7 @@ export default function App() {
                 Judul: "PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Telepon Seluler",
+                Kategori: kategori !== "semua" ? kategori : "Telepon Seluler",
                 Lokasi: "Blora, Jawa Tengah, Indonesia",
                 Delay: 35000,
                 Label: `${label}`,
@@ -1411,7 +1470,7 @@ export default function App() {
                 Judul: "DISKON! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Sepeda",
+                Kategori: kategori !== "semua" ? kategori : "Sepeda",
                 Lokasi: "Boyolali, Jawa Tengah, Indonesia",
                 Delay: 40000,
                 Label: `${label}`,
@@ -1430,7 +1489,7 @@ export default function App() {
                 Judul: "NEW! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Seni & Kerajinan",
+                Kategori: kategori !== "semua" ? kategori : "Seni & Kerajinan",
                 Lokasi: "Brebes, Jawa Tengah, Indonesia",
                 Delay: 29000,
                 Label: `${label}`,
@@ -1449,7 +1508,8 @@ export default function App() {
                 Judul: "BERGARANSI! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Olahraga & Outdoor",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Olahraga & Outdoor",
                 Lokasi: "Cilacap",
                 Delay: 33000,
                 Label: `${label}`,
@@ -1468,7 +1528,7 @@ export default function App() {
                 Judul: "TERMURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Komponen Otomotif",
+                Kategori: kategori !== "semua" ? kategori : "Komponen Otomotif",
                 Lokasi: "Demak, Demak",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1487,7 +1547,7 @@ export default function App() {
                 Judul: "TERLARIS! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Alat Musik",
+                Kategori: kategori !== "semua" ? kategori : "Alat Musik",
                 Lokasi: "Grobogan, Jawa Tengah, Indonesia",
                 Delay: 45000,
                 Label: `${label}`,
@@ -1506,7 +1566,8 @@ export default function App() {
                 Judul: "TERBARU! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Barang Antik & Koleksi",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Barang Antik & Koleksi",
                 Lokasi: "Jepara",
                 Delay: 32000,
                 Label: `${label}`,
@@ -1525,7 +1586,7 @@ export default function App() {
                 Judul: "ORIGINAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Cuci Gudang",
+                Kategori: kategori !== "semua" ? kategori : "Cuci Gudang",
                 Lokasi: "Karanganyar",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1544,7 +1605,7 @@ export default function App() {
                 Judul: "BEST SELLER! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Lain-lain",
+                Kategori: kategori !== "semua" ? kategori : "Lain-lain",
                 Lokasi: "Kebumen, Jawa Tengah, Indonesia",
                 Delay: 30000,
                 Label: `${label}`,
@@ -1563,7 +1624,7 @@ export default function App() {
                 Judul: "BIG PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Peralatan",
+                Kategori: kategori !== "semua" ? kategori : "Peralatan",
                 Lokasi: "Klaten, Jawa Tengah, Indonesia",
                 Delay: 34000,
                 Label: `${label}`,
@@ -1582,7 +1643,7 @@ export default function App() {
                 Judul: "BIG SALE! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Mebel",
+                Kategori: kategori !== "semua" ? kategori : "Mebel",
                 Lokasi: "Kudus",
                 Delay: 55000,
                 Label: `${label}`,
@@ -1601,7 +1662,8 @@ export default function App() {
                 Judul: "BISA COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Peralatan Rumah Tangga",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Peralatan Rumah Tangga",
                 Lokasi: "Purwakarta",
                 Delay: 35000,
                 Label: `${label}`,
@@ -1620,7 +1682,7 @@ export default function App() {
                 Judul: "PROMO COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kebun",
+                Kategori: kategori !== "semua" ? kategori : "Kebun",
                 Lokasi: "Subang, Indonesia",
                 Delay: 40000,
                 Label: `${label}`,
@@ -1639,7 +1701,7 @@ export default function App() {
                 Judul: "TERPERCAYA! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Perkakas",
+                Kategori: kategori !== "semua" ? kategori : "Perkakas",
                 Lokasi: "Sukabumi",
                 Delay: 29000,
                 Label: `${label}`,
@@ -1658,7 +1720,7 @@ export default function App() {
                 Judul: "PRODUK ASLI! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Video Game",
+                Kategori: kategori !== "semua" ? kategori : "Video Game",
                 Lokasi: "Sumedang",
                 Delay: 33000,
                 Label: `${label}`,
@@ -1677,7 +1739,8 @@ export default function App() {
                 Judul: "CUCI GUDANG! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Buku, Film, & Musik",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Buku, Film, & Musik",
                 Lokasi: "Tasikmalaya",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1696,7 +1759,7 @@ export default function App() {
                 Judul: "COD! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Tas & Koper",
+                Kategori: kategori !== "semua" ? kategori : "Tas & Koper",
                 Lokasi: "Bantul, Bantul",
                 Delay: 45000,
                 Label: `${label}`,
@@ -1715,7 +1778,8 @@ export default function App() {
                 Judul: "PROMO MENARIK! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Pakaian & Sepatu Wanita",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Pakaian & Sepatu Wanita",
                 Lokasi: "Sleman, Sleman",
                 Delay: 32000,
                 Label: `${label}`,
@@ -1734,7 +1798,8 @@ export default function App() {
                 Judul: "PROMO GILA! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Pakaian & Sepatu Pria",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Pakaian & Sepatu Pria",
                 Lokasi: "Yogyakarta",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1753,7 +1818,8 @@ export default function App() {
                 Judul: "HARGA GROSIR! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Perhiasan & Aksesori",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Perhiasan & Aksesori",
                 Lokasi: "Gamping, Yogyakarta, Indonesia",
                 Delay: 30000,
                 Label: `${label}`,
@@ -1772,7 +1838,8 @@ export default function App() {
                 Judul: "HARGA TERMURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kesehatan & Kecantikan",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Kesehatan & Kecantikan",
                 Lokasi: "Mlati, Special Region of Yogyakarta",
                 Delay: 34000,
                 Label: `${label}`,
@@ -1791,7 +1858,10 @@ export default function App() {
                 Judul: "NEW ARRIVAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Kebutuhan Hewan Peliharaan",
+                Kategori:
+                  kategori !== "semua"
+                    ? kategori
+                    : "Kebutuhan Hewan Peliharaan",
                 Lokasi: "Mergangsan, Special Region of Yogyakarta",
                 Delay: 55000,
                 Label: `${label}`,
@@ -1810,7 +1880,7 @@ export default function App() {
                 Judul: "DISKON MURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Bayi & Anak-Anak",
+                Kategori: kategori !== "semua" ? kategori : "Bayi & Anak-Anak",
                 Lokasi: "Denpasar, Bali, Indonesia",
                 Delay: 35000,
                 Label: `${label}`,
@@ -1829,7 +1899,7 @@ export default function App() {
                 Judul: "MENARIK! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Mainan & Game",
+                Kategori: kategori !== "semua" ? kategori : "Mainan & Game",
                 Lokasi: "Badung, Bali, Indonesia",
                 Delay: 40000,
                 Label: `${label}`,
@@ -1848,7 +1918,8 @@ export default function App() {
                 Judul: "TERKEREN! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Elektronik & Komputer",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Elektronik & Komputer",
                 Lokasi: "Kabupaten Tabanan",
                 Delay: 29000,
                 Label: `${label}`,
@@ -1867,7 +1938,7 @@ export default function App() {
                 Judul: "TERLAKU! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Telepon Seluler",
+                Kategori: kategori !== "semua" ? kategori : "Telepon Seluler",
                 Lokasi: "Klungkung, Bali, Indonesia",
                 Delay: 33000,
                 Label: `${label}`,
@@ -1886,7 +1957,7 @@ export default function App() {
                 Judul: "MURAH! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Sepeda",
+                Kategori: kategori !== "semua" ? kategori : "Sepeda",
                 Lokasi: "Buleleng, Bali, Indonesia",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1905,7 +1976,7 @@ export default function App() {
                 Judul: "TERJAMIN! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Seni & Kerajinan",
+                Kategori: kategori !== "semua" ? kategori : "Seni & Kerajinan",
                 Lokasi: "Jembrana, Bali, Indonesia",
                 Delay: 45000,
                 Label: `${label}`,
@@ -1924,7 +1995,8 @@ export default function App() {
                 Judul: "ORIGINAL! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Olahraga & Outdoor",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Olahraga & Outdoor",
                 Lokasi: "Batam, Riau, Indonesia",
                 Delay: 32000,
                 Label: `${label}`,
@@ -1943,7 +2015,7 @@ export default function App() {
                 Judul: "LARIS! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Komponen Otomotif",
+                Kategori: kategori !== "semua" ? kategori : "Komponen Otomotif",
                 Lokasi: "Jakarta, Indonesia",
                 Delay: 38000,
                 Label: `${label}`,
@@ -1962,7 +2034,7 @@ export default function App() {
                 Judul: "TOP SELLER! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Alat Musik",
+                Kategori: kategori !== "semua" ? kategori : "Alat Musik",
                 Lokasi: "Makassar",
                 Delay: 30000,
                 Label: `${label}`,
@@ -1981,7 +2053,8 @@ export default function App() {
                 Judul: "BEST PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Barang Antik & Koleksi",
+                Kategori:
+                  kategori !== "semua" ? kategori : "Barang Antik & Koleksi",
                 Lokasi: "Banten, Jawa Barat, Indonesia",
                 Delay: 34000,
                 Label: `${label}`,
@@ -2000,7 +2073,7 @@ export default function App() {
                 Judul: "PALING LARIS " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Cuci Gudang",
+                Kategori: kategori !== "semua" ? kategori : "Cuci Gudang",
                 Lokasi: "Tangerang",
                 Delay: 55000,
                 Label: `${label}`,
@@ -2019,7 +2092,7 @@ export default function App() {
                 Judul: "PROMO! " + judul,
                 Deskripsi: `${deskripsi}`,
                 Harga: `${harga}`,
-                Kategori: "Lain-lain",
+                Kategori: kategori !== "semua" ? kategori : "Lain-lain",
                 Lokasi: "Serang",
                 Delay: 35000,
                 Label: `${label}`,
