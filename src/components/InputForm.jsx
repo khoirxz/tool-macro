@@ -9,7 +9,7 @@ const InputForm = ({ state, setState, inputType, title }) => {
       value={state}
       onChange={(e) => setState(e.target.value)}
       sx={{ mb: 1.2 }}
-      size="small"
+      size="medium"
       type={inputType}
     />
   );
