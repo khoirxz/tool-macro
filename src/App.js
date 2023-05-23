@@ -24,10 +24,12 @@ import "./styles.css";
 
 export default function App() {
   const [judul, setJudul] = useState("");
-  const [deskripsi, setDeskripsi] = useState("");
   const [harga, setHarga] = useState(0);
+  const [hargaDiskon, setHargaDsikon] = useState(0);
+  const [deskripsi, setDeskripsi] = useState("");
   const [label, setLabel] = useState("");
   const [kategori, setKategori] = useState("");
+  const [jeda, setJeda] = useState(0);
   const [isKota, setIsKota] = useState("kota1");
   const [gambar1, setGambar1] = useState("");
   const [gambar2, setGambar2] = useState("");
@@ -52,6 +54,20 @@ export default function App() {
           setState={setJudul}
           inputType="text"
         />
+        {/* Harga field */}
+        <InputForm
+          title="Harga"
+          state={harga}
+          setState={setHarga}
+          inputType="number"
+        />
+        {/* Harga Diskon field */}
+        <InputForm
+          title="Harga Diskon"
+          state={hargaDiskon}
+          setState={setHargaDsikon}
+          inputType="number"
+        />
         {/* Deskripsi field */}
         <TextField
           label="Deskripsi"
@@ -63,13 +79,7 @@ export default function App() {
           multiline
           onChange={(e) => setDeskripsi(e.target.value)}
         />
-        {/* Harga field */}
-        <InputForm
-          title="Harga"
-          state={harga}
-          setState={setHarga}
-          inputType="number"
-        />
+
         {/* Kota field */}
         <FormControl sx={{ mb: 1.2 }}>
           <FormLabel id="kota">Pilih kota:</FormLabel>
@@ -113,6 +123,13 @@ export default function App() {
             ))}
           </Select>
         </FormControl>
+        {/* Jeda field */}
+        <InputForm
+          title="Jeda"
+          state={jeda}
+          setState={setJeda}
+          inputType="number"
+        />
         {/* Label field */}
         <InputForm
           title="Label"
@@ -194,7 +211,9 @@ export default function App() {
               judul={judul}
               deskripsi={deskripsi}
               harga={harga}
+              hargaDiskon={hargaDiskon}
               kategori={kategori}
+              jeda={jeda}
               label={label}
               gambar1={gambar1}
               gambar2={gambar2}
@@ -214,6 +233,8 @@ export default function App() {
             judul={judul}
             deskripsi={deskripsi}
             harga={harga}
+            hargaDiskon={hargaDiskon}
+            jeda={jeda}
             kategori={kategori}
             label={label}
             gambar1={gambar1}
@@ -232,6 +253,8 @@ export default function App() {
             headers={headers}
             judul={judul}
             deskripsi={deskripsi}
+            hargaDiskon={hargaDiskon}
+            jeda={jeda}
             harga={harga}
             kategori={kategori}
             label={label}
@@ -253,12 +276,13 @@ export default function App() {
 }
 
 const headers = [
-  { label: "Judul", key: "Judul" },
+  { label: "Judul Produk", key: "Judul" },
+  { label: "Harga Produk", key: "Harga" },
+  { label: "Harga Diskon", key: "HargaDiskon" },
   { label: "Deskripsi", key: "Deskripsi" },
-  { label: "Harga", key: "Harga" },
   { label: "Kategori", key: "Kategori" },
   { label: "Lokasi", key: "Lokasi" },
-  { label: "Delay", key: "Delay" },
+  { label: "Jeda", key: "Jeda" },
   { label: "Label", key: "Label" },
   { label: "Gambar1", key: "Gambar1" },
   { label: "Gambar2", key: "Gambar2" },
