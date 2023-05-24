@@ -29,6 +29,7 @@ export default function App() {
   const [deskripsi, setDeskripsi] = useState("");
   const [label, setLabel] = useState("");
   const [kategori, setKategori] = useState("");
+  const [kondisi, setKondisi] = useState("Baru");
   const [jeda, setJeda] = useState(0);
   const [isKota, setIsKota] = useState("kota1");
   const [gambar1, setGambar1] = useState("");
@@ -106,6 +107,22 @@ export default function App() {
               label="Kota 3"
             />
           </RadioGroup>
+        </FormControl>
+        <FormControl size="medium" sx={{ mb: 2 }} fullWidth>
+          <InputLabel id="Kondisi">Kondisi</InputLabel>
+          <Select
+            labelId="Kondisi"
+            label="kondisi"
+            value={kondisi}
+            onChange={(e) => setKondisi(e.target.value)}
+          >
+            <MenuItem value="Baru">Baru</MenuItem>
+            <MenuItem value="Bekas - Seperti Baru">
+              Bekas - Seperti Baru
+            </MenuItem>
+            <MenuItem value="Bekas - Baik">Bekas - Baik</MenuItem>
+            <MenuItem value="Bekas - Cukup Baik">Bekas - Cukup Baik</MenuItem>
+          </Select>
         </FormControl>
         {/* Kategori field */}
         <FormControl size="medium" sx={{ mb: 2 }} fullWidth>
@@ -214,6 +231,7 @@ export default function App() {
               hargaDiskon={hargaDiskon}
               kategori={kategori}
               jeda={jeda}
+              kondisi={kondisi}
               label={label}
               gambar1={gambar1}
               gambar2={gambar2}
@@ -237,6 +255,7 @@ export default function App() {
             jeda={jeda}
             kategori={kategori}
             label={label}
+            kondisi={kondisi}
             gambar1={gambar1}
             gambar2={gambar2}
             gambar3={gambar3}
@@ -258,6 +277,7 @@ export default function App() {
             harga={harga}
             kategori={kategori}
             label={label}
+            kondisi={kondisi}
             gambar1={gambar1}
             gambar2={gambar2}
             gambar3={gambar3}
@@ -283,6 +303,7 @@ const headers = [
   { label: "Kategori", key: "Kategori" },
   { label: "Lokasi", key: "Lokasi" },
   { label: "Jeda", key: "Jeda" },
+  { label: "Kondisi", key: "Kondisi" },
   { label: "Label", key: "Label" },
   { label: "Gambar1", key: "Gambar1" },
   { label: "Gambar2", key: "Gambar2" },
