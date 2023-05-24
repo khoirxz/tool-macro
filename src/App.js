@@ -75,7 +75,7 @@ export default function App() {
           variant="outlined"
           fullWidth={true}
           defaultValue={deskripsi}
-          rows={5}
+          rows={14}
           sx={{ mb: 3 }}
           multiline
           onChange={(e) => setDeskripsi(e.target.value)}
