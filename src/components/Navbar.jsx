@@ -6,7 +6,7 @@ const Navbar = () => {
       <AppBar position="relative" color="secondary">
         <Toolbar>
           <Typography variant="h6" component="div" flexGrow={1}>
-            GENERATE POST FBMP NUNMEDIA (OLD)
+            ROKET GENERATEPOST FBMP
           </Typography>
         </Toolbar>
       </AppBar>
