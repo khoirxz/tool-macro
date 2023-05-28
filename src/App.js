@@ -10,6 +10,7 @@ import Radio from "@mui/material/Radio";
 import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormLabel from "@mui/material/FormLabel";
+import { Typography } from "@mui/material";
 
 import Navbar from "./components/Navbar";
 import InputForm from "./components/InputForm";
@@ -54,6 +55,7 @@ export default function App() {
           state={judul}
           setState={setJudul}
           inputType="text"
+          error={judul === "" ? true : false}
         />
         {/* Harga field */}
         <InputForm
@@ -61,6 +63,7 @@ export default function App() {
           state={harga}
           setState={setHarga}
           inputType="number"
+          error={harga === 0 ? true : false}
         />
         {/* Harga Diskon field */}
         <InputForm
@@ -79,6 +82,7 @@ export default function App() {
           sx={{ mb: 3 }}
           multiline
           onChange={(e) => setDeskripsi(e.target.value)}
+          error={deskripsi === "" ? true : false}
         />
 
         {/* Kota field */}
@@ -108,6 +112,7 @@ export default function App() {
             />
           </RadioGroup>
         </FormControl>
+        {/* Kondisi filed */}
         <FormControl size="medium" sx={{ mb: 2 }} fullWidth>
           <InputLabel id="Kondisi">Kondisi</InputLabel>
           <Select
@@ -131,6 +136,7 @@ export default function App() {
             labelId="Kategori"
             label="Kategori"
             onChange={(e) => setKategori(e.target.value)}
+            error={kategori === "" ? true : false}
           >
             <MenuItem value="semua">Pilih semua</MenuItem>
             {listKategory.map((item, key) => (
@@ -146,6 +152,7 @@ export default function App() {
           state={jeda}
           setState={setJeda}
           inputType="number"
+          error={jeda === 0 ? true : false}
         />
         {/* Label field */}
         <InputForm

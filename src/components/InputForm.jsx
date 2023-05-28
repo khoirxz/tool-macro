@@ -1,6 +1,6 @@
 import TextField from "@mui/material/TextField";
 
-const InputForm = ({ state, setState, inputType, title }) => {
+const InputForm = ({ state, setState, inputType, title, ...rest }) => {
   return (
     <TextField
       label={title}
@@ -11,6 +11,7 @@ const InputForm = ({ state, setState, inputType, title }) => {
       sx={{ mb: 1.2 }}
       size="medium"
       type={inputType}
+      {...rest}
     />
   );
 };
